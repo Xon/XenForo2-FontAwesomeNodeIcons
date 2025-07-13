@@ -1,0 +1,1 @@
+See <a href="https://fontawesome.com/v5/search">font-awesome v5 class names</a>. Icon name should be prefixed with "fa-"

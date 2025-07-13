@@ -6,3 +6,12 @@
 		<i class="nodeIcon nodeIcon--{$node.node_type_id}"></i>
 	</xf:if>
 </xf:macro>
+
+<xf:macro name="node_icon_input" arg-node="!">
+	<xf:if is="$node.isFontAwesomeIconSupported()">
+	<xf:textboxrow name="node[fa_node_icon]" value="{$node.fa_node_icon}"
+				   label="{{ phrase('svFontAwesomeNodeIcons_fa_node_icon') }}"
+				   explain="{{ phrase('svFontAwesomeNodeIcons_fa_node_icon_explain') }}"
+				   dir="ltr" />
+	</xf:if>
+</xf:macro>

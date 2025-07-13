@@ -56,6 +56,11 @@ class Node extends XFCP_Node
         return $this->svDefaultIconByType[$nodeTypeId] ?? '';
     }
 
+    public function isFontAwesomeIconSupported(): bool
+    {
+        return $this->getFontAwesomeIconDefault(true) !== '';
+    }
+
     public function isUsingPerNodeIcon(): bool
     {
         return true;

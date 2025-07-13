@@ -1,6 +1,6 @@
 {
     "legacy_addon_id": "",
-    "title": "Font Awesome Node Icons",
+    "title": "Font awesome node icons",
     "description": "Per-node forum icons",
     "version_id": 1739830254,
     "version_string": "1.0.0",
@@ -26,5 +26,5 @@
             "PHP 7.2.0+"
         ]
     },
-    "icon": ""
+    "icon": "fab fa-font-awesome"
 }

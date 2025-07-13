@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Admin\\Controller\\Page",
+    "to_class": "SV\\FontAwesomeNodeIcons\\XF\\Admin\\Controller\\Page",
+    "execute_order": 10,
+    "active": true
+}
