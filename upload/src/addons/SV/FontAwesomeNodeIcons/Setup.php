@@ -10,14 +10,7 @@ use XF\AddOn\StepRunnerInstallTrait;
 use XF\AddOn\StepRunnerUninstallTrait;
 use XF\AddOn\StepRunnerUpgradeTrait;
 use XF\Db\Schema\Alter;
-use XF\Job\Atomic;
-use XF\Job\PermissionRebuild;
 
-/**
- * Class Setup
- *
- * @package SV\SelectableLogos
- */
 class Setup extends AbstractSetup
 {
     use InstallerHelper;
