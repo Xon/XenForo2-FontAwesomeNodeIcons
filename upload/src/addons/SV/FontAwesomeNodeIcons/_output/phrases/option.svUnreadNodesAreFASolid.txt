@@ -1,0 +1,1 @@
+Font awesome icons for unread nodes are solid

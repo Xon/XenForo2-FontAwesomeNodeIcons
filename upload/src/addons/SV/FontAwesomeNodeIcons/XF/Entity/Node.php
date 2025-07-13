@@ -74,7 +74,7 @@ class Node extends XFCP_Node
             $icon = $this->getFontAwesomeIconDefault($forAdmin);
         }
 
-        if ($extra['hasNew'] ?? false)
+        if (($extra['hasNew'] ?? false) && (\XF::options()->svUnreadNodesAreFASolid ?? true))
         {
             $icon = $this->getUnreadFontAwesomeIcon($icon);
         }
