@@ -9,8 +9,8 @@
     "faq_url": "",
     "support_url": "",
     "extra_urls": {
-        "License": "",
-        "Add-on site": ""
+        "License": "https://atelieraphelion.com/products/font-awesome-node-icons.263/copyright",
+        "Add-on site": "https://atelieraphelion.com/products/font-awesome-node-icons.263/"
     },
     "require": {
         "SV/StandardLib": [
