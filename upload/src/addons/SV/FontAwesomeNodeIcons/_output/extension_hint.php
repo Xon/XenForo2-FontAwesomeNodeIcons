@@ -20,4 +20,5 @@ namespace SV\FontAwesomeNodeIcons\XF\Admin\Controller
 namespace SV\FontAwesomeNodeIcons\XF\Entity
 {
 	class XFCP_Node extends \XF\Entity\Node {}
+	class XFCP_Thread extends \XF\Entity\Thread {}
 }
