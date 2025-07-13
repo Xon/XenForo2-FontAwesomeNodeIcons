@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace SV\FontAwesomeNodeIcons\XF\Entity;
 
+use SV\StandardLib\Helper;
 use XF\Entity\Forum as ForumEntity;
 use XF\Mvc\Entity\Structure;
+use XF\Repository\IconRepository;
 use function array_key_exists;
 use function preg_match;
 use function trim;
@@ -100,6 +102,34 @@ class Node extends XFCP_Node
         }
 
         parent::_preSave();
+    }
+
+    protected function _postSave()
+    {
+        parent::_postSave();
+
+        if ($this->isChanged('fa_node_icon'))
+        {
+            $this->svNodeIconChange();
+        }
+    }
+
+    protected function _postDelete()
+    {
+        parent::_postDelete();
+
+        $this->svNodeIconChange();
+    }
+
+    protected function svNodeIconChange(): void
+    {
+        if (\XF::$versionId >= 2030000)
+        {
+            \XF::runOnce('svNodeIconsRebuild', function () {
+                $iconRepo = Helper::repository(IconRepository::class);
+                $iconRepo->enqueueUsageAnalyzer('svNodeIcons');
+            });
+        }
     }
 
     /**
