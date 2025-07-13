@@ -24,6 +24,11 @@ abstract class IconUsage
                 if ($icon !== '')
                 {
                     $usageAnalyzer->recordIconsFromClasses('svNodeIcons', $id, $icon);
+                    $unreadIcon = $node->getUnreadFontAwesomeIcon($icon);
+                    if ($unreadIcon !== $icon)
+                    {
+                        $usageAnalyzer->recordIconsFromClasses('svNodeIcons', $id, $unreadIcon);
+                    }
                 }
             }
 

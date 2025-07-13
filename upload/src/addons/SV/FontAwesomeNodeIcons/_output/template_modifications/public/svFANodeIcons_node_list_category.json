@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "<xf:fa icon=\"fa-comments\" />",
-    "replace": "<xf:fa icon=\"{{ $node.getFontAwesomeIcon() }}\" />"
+    "replace": "<xf:fa icon=\"{{ $node.getFontAwesomeIcon($extras) }}\" />"
 }

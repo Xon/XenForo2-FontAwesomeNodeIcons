@@ -7,6 +7,7 @@ namespace SV\FontAwesomeNodeIcons\XF\Entity;
 use XF\Entity\Forum as ForumEntity;
 use XF\Mvc\Entity\Structure;
 use function array_key_exists;
+use function preg_match;
 use function trim;
 
 /**
@@ -60,18 +61,30 @@ class Node extends XFCP_Node
         return true;
     }
 
-    public function getFontAwesomeIcon(bool $forAdmin = false): string
+    public function getFontAwesomeIcon(?array $extra = [], bool $forAdmin = false): string
     {
-        if ($this->isUsingPerNodeIcon())
+        $icon = $this->isUsingPerNodeIcon() ? $this->fa_node_icon : null;
+        if ($icon === null || $icon === '')
         {
-            $icon = $this->fa_node_icon;
-            if ($icon !== null && $icon !== '')
-            {
-                return $icon;
-            }
+            $icon = $this->getFontAwesomeIconDefault($forAdmin);
         }
 
-        return $this->getFontAwesomeIconDefault($forAdmin);
+        if ($extra['hasNew'] ?? false)
+        {
+            $icon = $this->getUnreadFontAwesomeIcon($icon);
+        }
+
+        return $icon;
+    }
+
+    public function getUnreadFontAwesomeIcon(string $icon): string
+    {
+        if (preg_match('#^(?:fal|far)\s+(.*)$#',$icon, $match))
+        {
+            $icon = $match[1];
+        }
+
+        return 'fas ' . $icon;
     }
 
     protected function _preSave()

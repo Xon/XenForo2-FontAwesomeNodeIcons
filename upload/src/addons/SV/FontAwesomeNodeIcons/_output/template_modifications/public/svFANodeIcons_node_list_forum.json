@@ -5,5 +5,5 @@
     "enabled": true,
     "action": "str_replace",
     "find": "$node.Data.TypeHandler.getTypeIconClass() ?: 'fa-comments'",
-    "replace": "$node.getFontAwesomeIcon()"
+    "replace": "$node.getFontAwesomeIcon($extras)"
 }
