@@ -3,7 +3,7 @@
     "description": "Inject FA node icons",
     "execution_order": 1,
     "enabled": true,
-    "action": "str_replace",
-    "find": "<xf:fa icon=\"fa-comments\" />",
-    "replace": "<xf:fa icon=\"{{ $node.getFontAwesomeIcon($extras) }}\" />"
+    "action": "preg_replace",
+    "find": "#(<span class=\"node-icon\" aria-hidden=\"true\">).*?(</span>)#si",
+    "replace": "$1<xf:fa icon=\"{{ $node.getFontAwesomeIcon($extras) }}\" />$2"
 }
