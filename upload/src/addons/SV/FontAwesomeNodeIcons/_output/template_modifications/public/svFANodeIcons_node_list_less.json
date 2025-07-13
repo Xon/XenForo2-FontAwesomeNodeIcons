@@ -1,0 +1,9 @@
+{
+    "template": "node_list.less",
+    "description": "Remove default node icon css",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "\t&.subNodeLink--category:before\n\t{\n\t\t.m-faContent(@fa-var-comments);\n\t}\n\n\t&.subNodeLink--page:before\n\t{\n\t\t.m-faContent(@fa-var-file-alt);\n\t}\n\n\t&.subNodeLink--link:before\n\t{\n\t\t.m-faContent(@fa-var-link);\n\t}\n\n\t&.subNodeLink--search::before\n\t{\n\t\t.m-faContent(@fa-var-search);\n\t}",
+    "replace": ""
+}

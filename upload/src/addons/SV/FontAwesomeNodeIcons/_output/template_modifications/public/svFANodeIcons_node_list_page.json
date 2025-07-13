@@ -1,0 +1,9 @@
+{
+    "template": "node_list_page",
+    "description": "Inject FA node icons",
+    "execution_order": 1,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:fa icon=\"fa-file-alt\" />",
+    "replace": "<xf:fa icon=\"{{ $node.getFontAwesomeIcon() }}\" />"
+}

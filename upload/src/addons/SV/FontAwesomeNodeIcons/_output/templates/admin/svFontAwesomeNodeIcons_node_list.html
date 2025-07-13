@@ -1,0 +1,8 @@
+<xf:macro name="node_icon" arg-node="!">
+	<xf:set var="$typeIcon" value="{{ $node.getFontAwesomeIcon(true) }}" />
+	<xf:if is="$typeIcon">
+		<xf:fa icon="{$typeIcon}" />
+	<xf:else />
+		<i class="nodeIcon nodeIcon--{$node.node_type_id}"></i>
+	</xf:if>
+</xf:macro>

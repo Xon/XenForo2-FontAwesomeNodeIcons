@@ -1,0 +1,9 @@
+{
+    "template": "node_list",
+    "description": "Inject FA node icons",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "#(<xf:macro\\s+(?:name|id)=\"node_icon\"\\s+arg-node=\"!\">).*?(</xf:macro>)#si",
+    "replace": "$1\n<xf:macro name=\"svFontAwesomeNodeIcons_node_list::node_icon\" arg-node=\"{$node}\" />\n$2"
+}
