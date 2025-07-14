@@ -1,0 +1,21 @@
+html[data-logged-in="true"] .structItem-cell .unreadLink
+{
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+
+	position: relative;
+
+	white-space: nowrap;
+	overflow: hidden;
+	vertical-align: middle;
+
+	i.fa--xf {
+		<xf:if is="$xf.versionId < 2030000">
+		font-size: 70%;
+		</xf:if>
+		vertical-align: top;
+		width: 1.2em;
+		color: @xf-textColorFeature;
+	}
+}

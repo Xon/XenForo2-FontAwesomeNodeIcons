@@ -9,9 +9,8 @@ use SV\FontAwesomeNodeIcons\XF\Entity\Node as ExtendedNodeEntity;
  */
 class Thread extends XFCP_Thread
 {
-    public function getFontAwesomeUnreadIcon(): string
+    public function getFontAwesomeUnreadIcon(?string $defaultIcon = null): ?string
     {
-        $nodeIcon = null;
         $forum = $this->Forum;
         if ($forum !== null)
         {
@@ -22,11 +21,11 @@ class Thread extends XFCP_Thread
                 $icon = $node->fa_node_icon;
                 if ($icon !== null && $icon !== '')
                 {
-                    $nodeIcon = $node->getUnreadFontAwesomeIcon($icon);
+                    return $node->getUnreadFontAwesomeIcon($icon);
                 }
             }
         }
 
-        return $nodeIcon ?? 'fas fa-arrow-circle-right';
+        return $defaultIcon;
     }
 }

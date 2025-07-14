@@ -1,0 +1,8 @@
+<xf:macro name="unreadLink" arg-thread="!">
+	<a href="{{ link('threads/unread', $thread, {'new': 1}) }}"
+	   aria-hidden="true"
+	   class="unreadLink"
+	   title="{{ phrase('jump_to_new')|for_attr }}"><xf:fa icon="{{ 
+		$thread.getFontAwesomeUnreadIcon('fas fa-arrow-circle-right') 
+	}}" /></a>
+</xf:macro>
