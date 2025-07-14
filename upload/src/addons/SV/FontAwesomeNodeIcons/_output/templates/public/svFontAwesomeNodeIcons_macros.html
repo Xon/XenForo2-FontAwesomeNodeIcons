@@ -1,4 +1,4 @@
-<xf:macro name="unreadLink" arg-thread="!">
+<xf:macro name="unreadLink" arg-thread="!" arg-extra="{{ [] }}">
 	<a href="{{ link('threads/unread', $thread, {'new': 1}) }}"
 	   aria-hidden="true"
 	   class="unreadLink"
