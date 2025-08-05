@@ -143,7 +143,7 @@ class Node extends XFCP_Node
 
         $structure->columns['fa_node_icon'] = [
             'type'  => self::STR, 'maxLength' => 100, 'nullable' => true, 'default' => null,
-            'match' => '^[A-Za-z0-9_-]*$',
+            'match' => '/^[A-Za-z0-9_-]*$/',
             'api'   => true,
         ];
 
