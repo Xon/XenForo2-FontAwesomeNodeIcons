@@ -86,7 +86,7 @@ class Node extends XFCP_Node
 
     public function getUnreadFontAwesomeIcon(string $icon): string
     {
-        if (preg_match('#^(?:fal|far)\s+(.*)$#',$icon, $match))
+        if (preg_match('#^(?:fal|far|fad)\s+(.*)$#',$icon, $match))
         {
             $icon = $match[1];
         }
